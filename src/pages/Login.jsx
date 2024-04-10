@@ -21,7 +21,7 @@ export default function Login({ setIsLogin, setCurrUser }) {
     let password = userData.password;
     toast.loading("Logging-in ...");
     axios
-      .post("http://localhost:8000/login", { username, password })
+      .post("https://trendify-ecommerce-backend.onrender.com/login", { username, password })
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Logged-In Successfully") {

@@ -18,7 +18,7 @@ export default function Products() {
     async function setPriceRange() {
       toast.loading(<b>Loading...</b>);
       axios
-        .post(`http://localhost:8000/products/${section}/setrange`)
+        .post(`https://trendify-ecommerce-backend.onrender.com/products/${section}/setrange`)
         .then((res) => {
           toast.dismiss();
           setMinPriceLimit(res?.data?.minPriceLimit);
@@ -36,7 +36,7 @@ export default function Products() {
   useEffect(() => {
     function fetchSectionData() {
       axios
-        .post(`http://localhost:8000/products/${section}`, {
+        .post(`https://trendify-ecommerce-backend.onrender.com/products/${section}`, {
           categories,
           maxPrice,
           sort,

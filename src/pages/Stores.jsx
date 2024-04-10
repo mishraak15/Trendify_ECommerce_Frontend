@@ -17,7 +17,7 @@ export default function Stores() {
     function fetchStoreData() {
       toast.loading(<b>Loading...</b>);
       axios
-        .post(`http://localhost:8000/stores`, { search })
+        .post(`https://trendify-ecommerce-backend.onrender.com/stores`, { search })
         .then((res) => {
           toast.dismiss();
           if (res?.data?.msg === "Fetched Stores Data") {

@@ -43,7 +43,7 @@ export default function Signup({ setIsLogin, setCurrUser }) {
       let password = userData.password;
 
       axios
-        .post("http://localhost:8000/signup", { username, email, password })
+        .post("https://trendify-ecommerce-backend.onrender.com/signup", { username, email, password })
         .then((res) => {
           
           if (res?.data?.msg === "Signup-Login Successful") {

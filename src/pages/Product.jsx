@@ -52,7 +52,7 @@ export default function Product({ currUser, setCurrUser }) {
 
     toast.loading(<b>Loading...</b>);
     await axios
-      .post(`http://localhost:8000/product/${id}/addtocart`, {
+      .post(`https://trendify-ecommerce-backend.onrender.com/product/${id}/addtocart`, {
         Userid,
         quantity,
       })
@@ -83,7 +83,7 @@ export default function Product({ currUser, setCurrUser }) {
 
     function fetchProduct() {
       axios
-        .get(`http://localhost:8000/product/${id}`)
+        .get(`https://trendify-ecommerce-backend.onrender.com/product/${id}`)
         .then((res) => {
           if (res?.data?.msg === "Product Fetched Successfully") {
             setProductData(res.data?.data);
@@ -126,7 +126,7 @@ export default function Product({ currUser, setCurrUser }) {
     setInWishlist(true);
     let Userid = currUser?._id;
     axios
-      .post(`http://localhost:8000/product/${id}/addtowishlist`, { Userid })
+      .post(`https://trendify-ecommerce-backend.onrender.com/product/${id}/addtowishlist`, { Userid })
       .then((res) => {
         if (res?.data?.msg === "Added to Wishlist") {
           toast.success("Item added to Wishlist");
@@ -150,7 +150,7 @@ export default function Product({ currUser, setCurrUser }) {
     setInComparelist(true);
     let Userid = currUser?._id;
     axios
-      .post(`http://localhost:8000/product/${id}/addtocomparelist`, { Userid })
+      .post(`https://trendify-ecommerce-backend.onrender.com/product/${id}/addtocomparelist`, { Userid })
       .then((res) => {
         if (res?.data?.msg === "Added to Comparelist") {
           toast.success("Item added to Comparelist!!");

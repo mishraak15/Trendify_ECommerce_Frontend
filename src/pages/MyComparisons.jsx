@@ -21,7 +21,7 @@ export default function MyComparisons({
     setShowUserDetails(false);
     toast.loading(<b>Loading...</b>);
     axios
-      .get(`http://localhost:8000/user/${userid}/mycomparison`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/mycomparison`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Comparison Data Fetched Successfully") {

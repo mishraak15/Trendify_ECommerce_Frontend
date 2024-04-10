@@ -14,7 +14,7 @@ export default function WishList({ currUser, setCurrUser }) {
   useEffect(() => {
     toast.loading(<b>Loading...</b>);
     axios
-      .get(`http://localhost:8000/user/${userid}/mywishlist`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/mywishlist`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "WishList Data Fetched Successfully") {
@@ -31,7 +31,7 @@ export default function WishList({ currUser, setCurrUser }) {
   function removeFromWishlistHandler(itemid) {
     toast.loading(<b>Loading...</b>);
     axios
-      .post(`http://localhost:8000/user/${userid}/removefromwishlist`, {
+      .post(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/removefromwishlist`, {
         itemid,
       })
       .then((res) => {

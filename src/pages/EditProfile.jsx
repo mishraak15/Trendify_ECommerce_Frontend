@@ -23,7 +23,7 @@ export default function EditProfile({ setCurrUser, setShowUserDetails }) {
     async function fetchUserData() {
       toast.loading(<b>Loading...</b>);
       axios
-        .get(`http://localhost:8000/user/${userid}/fetchProfileData`)
+        .get(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/fetchProfileData`)
         .then((res) => {
           toast.dismiss();
           if (res?.data?.msg === "Fetched User Data Successfully") {

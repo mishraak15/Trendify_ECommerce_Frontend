@@ -18,7 +18,7 @@ export default function Home() {
     });
     async function fetchProducts() {
       await axios
-        .get("http://localhost:8000/")
+        .get("https://trendify-ecommerce-backend.onrender.com/")
         .then((res) => {
           toast.dismiss();
           setFeaturedProducts(res.data.featured);
