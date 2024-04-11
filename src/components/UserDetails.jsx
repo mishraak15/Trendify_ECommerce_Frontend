@@ -74,7 +74,7 @@ export default function UserDetails({setShowUserDetails, setIsLogin, setCurrUser
     let oldPass=changePassData.oldPass;
     let newPass=changePassData.newPass;
     let id=currUser._id;
-    axios.post('http://localhost:8000/changepass',{oldPass, newPass,id}).then(res=>{
+    axios.post('https://trendify-ecommerce-backend.onrender.com/changepass',{oldPass, newPass,id}).then(res=>{
             toast.dismiss();
             toast.success("Password Changed Successfully",{
                 duration:5000,
