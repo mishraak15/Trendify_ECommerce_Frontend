@@ -29,7 +29,7 @@ export default function Cart({ currUser, setShowCart, setCurrUser }) {
   useEffect(() => {
     function fetchProductData() {
       axios
-        .get(`http://localhost:8000/${currUser._id}/cartData`)
+        .get(`https://trendify-ecommerce-backend.onrender.com/${currUser._id}/cartData`)
         .then((res) => {
           if (res?.data?.msg === "Fetched Successfully") {
             setCartItem(res?.data?.data);
@@ -58,7 +58,7 @@ export default function Cart({ currUser, setShowCart, setCurrUser }) {
   function resetClickHandler() {
     toast.loading();
     axios
-      .get(`http://localhost:8000/${currUser._id}/clearcart`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/${currUser._id}/clearcart`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Cleared Cart") {
@@ -84,7 +84,7 @@ export default function Cart({ currUser, setShowCart, setCurrUser }) {
   function deleteItemFromCart(itemId){
     toast.loading();
     axios
-      .get(`http://localhost:8000/${currUser._id}/deleteitemfromcart/${itemId}`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/${currUser._id}/deleteitemfromcart/${itemId}`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Removed From Cart") {
