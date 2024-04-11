@@ -12,7 +12,7 @@ export default function MyCartItem({ item, userid, setCurrUser, setCartData,setS
     setShowCart(false);
     toast.loading(<b>Loading...</b>);
     axios
-      .get(`http://localhost:8000/${userid}/deleteitemfromcart/${item._id}`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/${userid}/deleteitemfromcart/${item._id}`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Removed From Cart") {
@@ -37,7 +37,7 @@ export default function MyCartItem({ item, userid, setCurrUser, setCartData,setS
     setShowCart(false);
     let itemid= item._id;
     axios
-      .post(`http://localhost:8000/user/${userid}/setquantity`, {
+      .post(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/setquantity`, {
         q,
         itemid
       })
