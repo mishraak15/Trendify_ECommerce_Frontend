@@ -46,7 +46,7 @@ export default function MyCart({
   function resetClickHandler() {
     toast.loading();
     axios
-      .get(`http://localhost:8000/${userid}/clearcart`)
+      .get(`https://trendify-ecommerce-backend.onrender.com/${userid}/clearcart`)
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Cleared Cart") {
