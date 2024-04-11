@@ -51,7 +51,7 @@ export default function MyComparisonItem({
 
     toast.loading(<b>Loading...</b>);
     axios
-      .post(`http://localhost:8000/user/${userid}/deletefromcomparison`, {
+      .post(`https://trendify-ecommerce-backend.onrender.com/user/${userid}/deletefromcomparison`, {
         itemid,
       })
       .then((res) => {
