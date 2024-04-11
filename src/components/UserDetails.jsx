@@ -36,7 +36,7 @@ export default function UserDetails({setShowUserDetails, setIsLogin, setCurrUser
   function logoutClickHandler() {
     toast.loading("Logging-out...");
     axios
-      .get("http://localhost:8000/logout")
+      .get("https://trendify-ecommerce-backend.onrender.com/logout")
       .then((res) => {
         toast.dismiss();
         if (res?.data?.msg === "Logout Successfully") {
